@@ -43,12 +43,10 @@ const PlaceOrder = () => {
             </div>
           </div>
           <button onClick={()=>navigate("/order")} >PROCEED TO CHECKOUT</button>
-        </div>
-          <button >PROCEED TO PAYMENT</button>
-        </div>
-
+        
     </form>
   )
 }
+
 
 export default PlaceOrder
