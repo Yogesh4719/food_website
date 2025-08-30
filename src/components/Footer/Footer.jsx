@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer-content">
             <div className="footer-content-left">
                 <img src={assets.logo} alt="" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, consequatur</p>
+                <p>Fresh, tasty, and crafted for every craving.Tomato is here to bring happiness to your plate, one bite at a time.</p>
                 <div className="footer-social-icons">
                     <img src={assets.facebook_icon} alt="" />
                     <img src={assets.twitter_icon} alt="" />
@@ -36,5 +36,6 @@ const Footer = () => {
     </div>
   )
 }
+
 
 export default Footer
