@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'   
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
+
 const PlaceOrder = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
+  const navigate = useNavigate();   
+
   return (
     <form action="" className="place-order">
       <div className="place-order-left">
@@ -17,36 +21,39 @@ const PlaceOrder = () => {
           <input type="text" placeholder="City" />
           <input type="text" placeholder="State" />
         </div>
-        <div className="multi-fileds">
+        <div className="multi-fields">   {/* ✅ fixed typo */}
           <input type="text" placeholder="Zip Code" />
           <input type="text" placeholder="Country" />
         </div>
         <input type="text" placeholder="Phone Number" />
       </div>
+
       <div className="place-order-right">
         <div className="cart-total">
           <h2>Cart Total</h2>
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>{getTotalCartAmount()}</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Shipping Fee</p>
-              <p>${getTotalCartAmount()===0?0:2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
-              <p>{getTotalCartAmount()===0?0:getTotalCartAmount()+2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</p>
             </div>
           </div>
-          <button onClick={()=>navigate("/order")} >PROCEED TO CHECKOUT</button>
-        
+          <button type="button" onClick={() => navigate("/order")}>
+            PROCEED TO CHECKOUT
+          </button>
+        </div>
+      </div>
     </form>
   )
 }
-
 
 export default PlaceOrder
